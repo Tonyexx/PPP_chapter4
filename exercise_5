@@ -36,10 +36,10 @@
 
 	int main()
 	{			
-		cout << "Please enter two values followed by a basic math operations\n";
+		cout << "Please enter two values and a basic math operations between them, the operations can be'+','-','*','/'\n";
 		double val1 = 0, val2 = 0;
 		char oper = ' ';
-		cin >> val1 >> val2 >> oper;
+		cin >> val1 >> oper>>val2;
 		switch(oper)
 		{
 		case'+':
@@ -48,19 +48,24 @@
 				 << val1 + val2;
 			break;
 		case'-':
-			cout<< "The sum of " << val1
+			cout<< "The difference between " << val1
 				<< " and " << val2 << " is "
 				<< val1 - val2;
 			break;
 		case'*':
-			cout << "The sum of " << val1
+			cout << "The product of " << val1
 				<< " and " << val2 << " is "
 				<< val1 * val2;
 			break;
 		case'/':
-			cout << "The sum of " << val1
-				<< " and " << val2 << " is "
-				<< val1 / val2;
+			if (val2 == 0)
+				cout << val1 << " shouldn't be divided by zero";
+			else 
+			{
+				cout << "The ratio of " << val1
+					<< " and " << val2 << " is "
+					<< val1 / val2;
+			}
 			break;
 		default:
 			cout << "Error\n";
