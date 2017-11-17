@@ -1,0 +1,51 @@
+// exercise_7.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "stdafx.h"
+#include<iostream>
+#include<string>
+#include<vector>
+#include<algorithm>
+#include<cmath>
+	using namespace std;
+	inline void keep_window_open() { char ch; cin >> ch; }
+
+	template<typename C>
+	using Value_type = typename C::value_type;
+
+	template<typename C>
+	using Iterator = typename C::iterator;
+
+	template<typename C>
+	// requires Container<C>()
+
+	void sort(C& c)
+	{
+		std::sort(c.begin(), c.end());
+	}
+
+	template<typename C, typename Pred>
+	// requires Container<C>() && Binary_Predicate<Value_type<C>>()
+	void sort(C& c, Pred p)
+	{
+		std::sort(c.begin(), c.end(), p);
+	}
+
+	int main()
+	{			
+		vector<double> dist; // distance between cities
+		for (double temp; cin >> temp; ) // read into temp
+			dist.push_back(temp); // put temp into vector
+
+		// compute mean distance:
+		double sum = 0;
+		for (int x : dist) sum += x;
+		cout << "Average distance: " << sum / dist.size() << '\n';
+
+		// find and print smallest and largest distance
+		sort(dist); // sort distance
+		cout << "The smallest distance is " << dist[0] << '\n'
+			<< "The largest distance is " << dist[dist.size()-1]<<'\n';
+		system("pause");
+	}
