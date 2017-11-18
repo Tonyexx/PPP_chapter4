@@ -1,0 +1,84 @@
+
+#include "stdafx.h"
+#include "stdafx.h"
+#include<iostream>
+#include<string>
+#include<vector>
+#include<algorithm>
+#include<cmath>
+	using namespace std;
+	inline void keep_window_open() { char ch; cin >> ch; }
+
+	//sort 
+
+	template<typename C>
+	using Value_type = typename C::value_type;
+
+	template<typename C>
+	using Iterator = typename C::iterator;
+
+	template<typename C>
+	// requires Container<C>()
+
+	void sort(C& c)
+	{
+		std::sort(c.begin(), c.end());
+	}
+
+	template<typename C, typename Pred>
+	// requires Container<C>() && Binary_Predicate<Value_type<C>>()
+	void sort(C& c, Pred p)
+	{
+		std::sort(c.begin(), c.end(), p);
+	}
+
+	int main()
+	{			
+		vector<string>letter{ "zero","one","two","three","four","five","six","seven","eight","nine" };
+		vector<int>num{0,1,2,3,4,5,6,7,8,9};
+		int val;
+		cout << "Please enter a number: ";
+		while (cin >> val) 
+		{
+			switch (val)
+			{
+			case 0:
+				cout << letter[0]<<"\n";
+				break;
+			case 1:
+				cout << letter[1] << "\n";
+				break;
+			case 2:
+				cout << letter[2] << "\n";
+				break;
+			case 3:
+				cout << letter[3] << "\n";
+				break;
+			case 4:
+				cout << letter[4] << "\n";
+				break;
+			case 5:
+				cout << letter[5] << "\n";
+				break;
+			case 6:
+				cout << letter[6] << "\n";
+				break;
+			case 7:
+				cout << letter[7] << "\n";
+				break;
+			case 8:
+				cout << letter[8] << "\n";
+				break;
+			case 9:
+				cout << letter[9] << "\n"; 
+				break;
+			default:
+				cout << "Error";
+				break;
+			}
+		}
+	system("pause");
+	}
+
+
+
